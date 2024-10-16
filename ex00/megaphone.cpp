@@ -1,7 +1,8 @@
+#define MEGAPHONE_DEFAULT "* LOUD AND UNBEARABLE FEEDBACK NOISE *"
+
 #include <iostream>
 #include <string>
 
-#define MEGAPHONE_DEFAULT "* LOUD AND UNBEARABLE FEEDBACK NOISE *"
 
 static void	megaphoneStr(std::string str)
 {
