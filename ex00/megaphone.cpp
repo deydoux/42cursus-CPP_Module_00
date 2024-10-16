@@ -4,7 +4,7 @@
 #include <string>
 
 
-static void	megaphoneStr(std::string str)
+static void megaphoneStr(std::string str)
 {
 	for (size_t i = 0; i < str.size(); i++)
 		str[i] = std::toupper(str[i]);
