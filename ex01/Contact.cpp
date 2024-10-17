@@ -16,6 +16,21 @@ Contact &Contact::operator=(const Contact &rhs) {
 	return (*this);
 }
 
+std::string Contact::getFirstName()
+{
+	return (this->_firstName);
+}
+
+std::string Contact::getLastName()
+{
+	return (this->_lastName);
+}
+
+std::string Contact::getNickname()
+{
+	return (this->_nickname);
+}
+
 Contact::~Contact() {
 	std::cerr << this->_firstName << " " << this->_lastName << " Contact destructor called" << std::endl;
 }
