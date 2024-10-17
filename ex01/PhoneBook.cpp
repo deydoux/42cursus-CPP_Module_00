@@ -64,9 +64,11 @@ void PhoneBook::add() {
 
 static std::string truncate(std::string str)
 {
+	std::string truncatedStr = str.substr(0, 10);
+
 	if (str.size() > 10)
-		str[9] = '.';
-	return (str);
+		truncatedStr[9] = '.';
+	return (truncatedStr);
 }
 
 void PhoneBook::search() {
