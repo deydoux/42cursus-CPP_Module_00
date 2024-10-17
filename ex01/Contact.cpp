@@ -48,8 +48,10 @@ Contact::~Contact() {
 std::ostream &operator<<(std::ostream &o, const Contact &contact)
 {
 	std::cerr << contact.getFirstName() << " " << contact.getLastName() << " Contact overload operator called" << std::endl;
-	o << "First name: " << contact.getFirstName() << std::endl << "Last name: " << contact.getLastName() << std::endl
-		<< "Nickname: " << contact.getNickname() << std::endl << "Phone number: " << contact.getPhoneNumber() << std::endl
+	o << "First name: " << contact.getFirstName() << std::endl
+		<< "Last name: " << contact.getLastName() << std::endl
+		<< "Nickname: " << contact.getNickname() << std::endl
+		<< "Phone number: " << contact.getPhoneNumber() << std::endl
 		<< "Darkest secret: " << contact.getDarkestSecret() << std::endl;
 	return (o);
 }
