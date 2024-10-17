@@ -51,14 +51,17 @@ void PhoneBook::search() {
 			<< std::setw(10) << truncate(this->_contacts[i].getLastName()) << " | " << std::setw(10) << truncate(this->_contacts[i].getNickname()) << " |"
 			<< std::endl;
 
+	std::cout << std::endl;
+
 	std::string input;
 	do {
 		if (input.size())
-			std::cout << "Invalid \"" << input << "\" index";
+			std::cout << "Invalid \"" << input << "\" index" << std::endl;
+
 		if (this->_size > 1)
-			std::cout << std::endl << "Index [0-" << this->_size - 1 << "] ";
+			std::cout << "Index [0-" << this->_size - 1 << "] ";
 		else
-			std::cout << std::endl << "Index [0] ";
+			std::cout << "Index [0] ";
 		std::getline(std::cin, input);
 
 		if (std::cin.eof())
@@ -66,7 +69,7 @@ void PhoneBook::search() {
 			std::cout << std::endl;
 			return ;
 		}
-	} while (input.size() != 1 || !std::isdigit(input[0]));
+	} while (input.size() != 1 || !std::isdigit(input[0]) || (size_t)input[0] - '0' >= this->_size);
 
 	std::cout << std::endl << this->_contacts[input[0] - '0'] << std::endl;
 }
