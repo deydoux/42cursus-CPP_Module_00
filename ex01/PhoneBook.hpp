@@ -1,14 +1,19 @@
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
+#define PHONEBOOK_SIZE_MAX	8
 
+#include <iomanip>
 #include "Contact.hpp"
 
 class PhoneBook {
 private:
-	Contact	_contacts[8];
-
+	Contact	_contacts[PHONEBOOK_SIZE_MAX];
+	size_t	_oldestIndex;
+	size_t	_size;
 public:
-	PhoneBook(/* args */);
+	PhoneBook();
+	void	add();
+	void	search();
 	~PhoneBook();
 };
 
