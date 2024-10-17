@@ -8,14 +8,22 @@ static std::string readField(const std::string fieldName) {
 	if (std::cin.eof())
 		return (std::string());
 
-	std::cout << fieldName << ": ";
-	std::string content;
-	std::getline(std::cin, content);
+	while (true) {
+		std::cout << fieldName << ": ";
+		std::string content;
+		std::getline(std::cin, content);
 
-	if (std::cin.eof())
-		std::cout << std::endl;
+		if (std::cin.eof())
+		{
+			std::cout << std::endl;
+			return (std::string());
+		}
 
-	return content;
+		if (content.size())
+			return (content);
+
+		std::cout << "Empty field not allowed" << std::endl;
+	}
 }
 
 void PhoneBook::add() {
