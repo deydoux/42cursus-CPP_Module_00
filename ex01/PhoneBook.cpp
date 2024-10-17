@@ -70,8 +70,8 @@ void PhoneBook::search() {
 			std::cout << "Index [0-" << this->_size - 1 << "]: ";
 		else
 			std::cout << "Index [0]: ";
-		std::getline(std::cin, input);
 
+		std::getline(std::cin, input);
 		if (std::cin.eof()) {
 			std::cout << std::endl;
 			return ;
@@ -79,7 +79,10 @@ void PhoneBook::search() {
 
 		input_s.clear();
 		input_s.str(input);
+
 		input_s >> index;
+		if (input_s.bad())
+			return ;
 	} while (!input_s.eof() || index >= this->_size);
 
 	std::cout << std::endl << this->_contacts[index] << std::endl;
