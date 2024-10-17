@@ -25,9 +25,35 @@ static std::string readField(const std::string fieldName) {
 	}
 }
 
+static bool isValidPhoneNumber(std::string phoneNumber) {
+	size_t i = 0;
+
+	if (phoneNumber[0] == '+')
+		i++;
+
+	while (std::isdigit(phoneNumber[i]))
+		i++;
+
+	if (phoneNumber[i] || (i == 1 && phoneNumber[0] == '+')) {
+		std::cout << "Invalid phone number" << std::endl;
+		return (false);
+	}
+
+	return (true);
+}
+
+static std::string readPhoneNumber() {
+	std::string phoneNumber;
+
+	do phoneNumber = readField("Phone number");
+	while (!isValidPhoneNumber(phoneNumber));
+
+	return (phoneNumber);
+}
+
 void PhoneBook::add() {
 	std::cout << std::endl;
-	this->_contacts[this->_oldestIndex] = Contact(readField("First name"), readField("Last name"), readField("Nickname"), readField("Phone number"),
+	this->_contacts[this->_oldestIndex] = Contact(readField("First name"), readField("Last name"), readField("Nickname"), readPhoneNumber(),
 		readField("Darkest secret"));
 	std::cout << std::endl;
 
