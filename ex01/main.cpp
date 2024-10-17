@@ -1,4 +1,4 @@
-#define USAGE "[ADD/SEARCH/EXIT] "
+#define USAGE "[ADD/SEARCH/EXIT]: "
 
 #include "PhoneBook.hpp"
 #include <cstdlib>

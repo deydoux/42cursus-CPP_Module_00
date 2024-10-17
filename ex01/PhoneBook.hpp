@@ -3,6 +3,7 @@
 #define PHONEBOOK_SIZE_MAX	8
 
 #include <iomanip>
+#include <sstream>
 #include "Contact.hpp"
 
 class PhoneBook {

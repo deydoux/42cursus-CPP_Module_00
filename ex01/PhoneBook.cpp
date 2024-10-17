@@ -13,8 +13,7 @@ static std::string readField(const std::string fieldName) {
 		std::string content;
 		std::getline(std::cin, content);
 
-		if (std::cin.eof())
-		{
+		if (std::cin.eof()) {
 			std::cout << std::endl;
 			return (std::string());
 		}
@@ -61,25 +60,29 @@ void PhoneBook::search() {
 
 	std::cout << std::endl;
 
+	size_t index;
 	std::string input;
+	std::stringstream input_s;
 	do {
-		if (input.size())
-			std::cout << "Invalid \"" << input << "\" index" << std::endl;
-
+		if (!input_s.good())
+			std::cout << "Invalid index" << std::endl;
 		if (this->_size > 1)
-			std::cout << "Index [0-" << this->_size - 1 << "] ";
+			std::cout << "Index [0-" << this->_size - 1 << "]: ";
 		else
-			std::cout << "Index [0] ";
+			std::cout << "Index [0]: ";
 		std::getline(std::cin, input);
 
-		if (std::cin.eof())
-		{
+		if (std::cin.eof()) {
 			std::cout << std::endl;
 			return ;
 		}
-	} while (input.size() != 1 || !std::isdigit(input[0]) || (size_t)input[0] - '0' >= this->_size);
 
-	std::cout << std::endl << this->_contacts[input[0] - '0'] << std::endl;
+		input_s.clear();
+		input_s.str(input);
+		input_s >> index;
+	} while (!input_s.eof() || index >= this->_size);
+
+	std::cout << std::endl << this->_contacts[index] << std::endl;
 }
 
 PhoneBook::~PhoneBook() {
