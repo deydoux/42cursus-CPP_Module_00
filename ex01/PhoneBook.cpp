@@ -46,7 +46,7 @@ static std::string truncate(std::string str)
 void PhoneBook::search() {
 	if (!this->_size)
 	{
-		std::cout << "PhoneBook empty" << std::endl;
+		std::cout << "PhoneBook empty" << std::endl << std::endl;
 		return ;
 	}
 
@@ -66,10 +66,11 @@ void PhoneBook::search() {
 	do {
 		if (!input_s.good())
 			std::cout << "Invalid index" << std::endl;
+
+		std::cout << "Index [0";
 		if (this->_size > 1)
-			std::cout << "Index [0-" << this->_size - 1 << "]: ";
-		else
-			std::cout << "Index [0]: ";
+			std::cout << "-" << this->_size - 1;
+		std::cout << "]: ";
 
 		std::getline(std::cin, input);
 		if (std::cin.eof()) {
