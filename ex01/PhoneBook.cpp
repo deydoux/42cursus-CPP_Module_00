@@ -62,8 +62,7 @@ void PhoneBook::add() {
 		this->_size++;
 }
 
-static std::string truncate(std::string str)
-{
+static std::string truncate(std::string str) {
 	std::string truncatedStr = str.substr(0, 10);
 
 	if (str.size() > 10)

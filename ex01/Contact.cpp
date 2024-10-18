@@ -16,28 +16,23 @@ Contact &Contact::operator=(const Contact &rhs) {
 	return (*this);
 }
 
-std::string Contact::getFirstName() const
-{
+std::string Contact::getFirstName() const {
 	return (this->_firstName);
 }
 
-std::string Contact::getLastName() const
-{
+std::string Contact::getLastName() const {
 	return (this->_lastName);
 }
 
-std::string Contact::getNickname() const
-{
+std::string Contact::getNickname() const {
 	return (this->_nickname);
 }
 
-std::string Contact::getPhoneNumber() const
-{
+std::string Contact::getPhoneNumber() const {
 	return (this->_phoneNumber);
 }
 
-std::string Contact::getDarkestSecret() const
-{
+std::string Contact::getDarkestSecret() const {
 	return (this->_darkestSecret);
 }
 
@@ -45,8 +40,7 @@ Contact::~Contact() {
 	std::cerr << this->_firstName << " " << this->_lastName << " Contact destructor called" << std::endl;
 }
 
-std::ostream &operator<<(std::ostream &o, const Contact &contact)
-{
+std::ostream &operator<<(std::ostream &o, const Contact &contact) {
 	std::cerr << contact.getFirstName() << " " << contact.getLastName() << " Contact overload operator called" << std::endl;
 	o << "First name: " << contact.getFirstName() << std::endl
 		<< "Last name: " << contact.getLastName() << std::endl
