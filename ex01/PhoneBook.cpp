@@ -110,7 +110,7 @@ void PhoneBook::search() {
 		input_s.str(input);
 
 		input_s >> index;
-		if (input_s.bad())
+		if (input_s.fail())
 			return ;
 	} while (!input_s.eof() || index >= this->_size);
 
