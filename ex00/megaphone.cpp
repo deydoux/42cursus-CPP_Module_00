@@ -1,5 +1,3 @@
-#define MEGAPHONE_DEFAULT "* LOUD AND UNBEARABLE FEEDBACK NOISE *"
-
 #include <iostream>
 #include <string>
 
@@ -11,7 +9,7 @@ static void megaphoneStr(std::string str) {
 
 int main(int argc, char **argv) {
 	if (argc < 2)
-		std::cout << MEGAPHONE_DEFAULT;
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
 	else
 		for (int i = 1; i < argc; i++)
 			megaphoneStr(argv[i]);
