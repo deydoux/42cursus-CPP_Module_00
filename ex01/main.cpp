@@ -1,5 +1,3 @@
-#define USAGE "[ADD/SEARCH/EXIT]: "
-
 #include "PhoneBook.hpp"
 #include <cstdlib>
 
@@ -8,7 +6,7 @@ int main() {
 	std::string	command;
 
 	while (!std::cin.eof()) {
-		std::cout << USAGE;
+		std::cout << "[ADD/SEARCH/EXIT]: ";
 		std::getline(std::cin, command);
 		if (std::cin.eof())
 		{
