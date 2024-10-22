@@ -1,5 +1,4 @@
 #include "PhoneBook.hpp"
-#include <cstdlib>
 
 int main() {
 	PhoneBook	phoneBook;
@@ -11,14 +10,14 @@ int main() {
 		if (std::cin.eof())
 		{
 			std::cout << std::endl;
-			return (EXIT_FAILURE);
+			return (1);
 		}
 		if (command == "ADD")
 			phoneBook.add();
 		else if (command == "SEARCH")
 			phoneBook.search();
 		else if (command == "EXIT")
-			return (EXIT_SUCCESS);
+			return (0);
 		else
 			std::cout << "Unrecognized \"" << command << "\" command" << std::endl;
 	}
