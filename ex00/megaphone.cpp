@@ -14,5 +14,4 @@ int main(int argc, char **argv) {
 		for (int i = 1; i < argc; i++)
 			megaphoneStr(argv[i]);
 	std::cout << std::endl;
-	return (0);
 }
