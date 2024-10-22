@@ -7,8 +7,7 @@ int main() {
 	while (!std::cin.eof()) {
 		std::cout << "[ADD/SEARCH/EXIT]: ";
 		std::getline(std::cin, command);
-		if (std::cin.eof())
-		{
+		if (std::cin.eof()) {
 			std::cout << std::endl;
 			return (1);
 		}

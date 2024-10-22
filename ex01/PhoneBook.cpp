@@ -70,8 +70,7 @@ static std::string truncate(std::string str) {
 }
 
 void PhoneBook::search() {
-	if (!_size)
-	{
+	if (!_size) {
 		std::cout << "PhoneBook empty" << std::endl << std::endl;
 		return ;
 	}
