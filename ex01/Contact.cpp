@@ -40,12 +40,12 @@ Contact::~Contact() {
 	std::cerr << _firstName << " " << _lastName << " Contact destructor called" << std::endl;
 }
 
-std::ostream &operator<<(std::ostream &o, const Contact &contact) {
+std::ostream &operator<<(std::ostream &os, const Contact &contact) {
 	std::cerr << contact.getFirstName() << " " << contact.getLastName() << " Contact overload operator called" << std::endl;
-	o << "First name: " << contact.getFirstName() << std::endl
+	os << "First name: " << contact.getFirstName() << std::endl
 		<< "Last name: " << contact.getLastName() << std::endl
 		<< "Nickname: " << contact.getNickname() << std::endl
 		<< "Phone number: " << contact.getPhoneNumber() << std::endl
 		<< "Darkest secret: " << contact.getDarkestSecret() << std::endl;
-	return (o);
+	return (os);
 }

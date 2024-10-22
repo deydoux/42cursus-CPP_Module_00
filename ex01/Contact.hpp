@@ -24,6 +24,6 @@ public:
 	~Contact();
 };
 
-std::ostream	&operator<<(std::ostream &o, const Contact &contact);
+std::ostream	&operator<<(std::ostream &os, const Contact &contact);
 
 #endif
