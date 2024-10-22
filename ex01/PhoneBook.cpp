@@ -53,13 +53,12 @@ static std::string readPhoneNumber() {
 
 void PhoneBook::add() {
 	std::cout << std::endl;
-	this->_contacts[this->_oldestIndex] = Contact(readField("First name"), readField("Last name"), readField("Nickname"), readPhoneNumber(),
-		readField("Darkest secret"));
+	_contacts[_oldestIndex] = Contact(readField("First name"), readField("Last name"), readField("Nickname"), readPhoneNumber(), readField("Darkest secret"));
 	std::cout << std::endl;
 
-	++this->_oldestIndex %= PHONEBOOK_SIZE_MAX;
-	if (this->_size < PHONEBOOK_SIZE_MAX)
-		this->_size++;
+	++_oldestIndex %= PHONEBOOK_SIZE_MAX;
+	if (_size < PHONEBOOK_SIZE_MAX)
+		_size++;
 }
 
 static std::string truncate(std::string str) {
@@ -71,7 +70,7 @@ static std::string truncate(std::string str) {
 }
 
 void PhoneBook::search() {
-	if (!this->_size)
+	if (!_size)
 	{
 		std::cout << "PhoneBook empty" << std::endl << std::endl;
 		return ;
@@ -80,10 +79,9 @@ void PhoneBook::search() {
 	std::cout << "________________________________________________" << std::endl;
 	std::cout << "| index | first name | last name  | nickname   |" << std::endl << std::endl;
 
-	for (size_t i = 0; i < this->_size; i++)
-		std::cout << "|   " << i << "   | " << std::setw(10) << truncate(this->_contacts[i].getFirstName()) << " | "
-			<< std::setw(10) << truncate(this->_contacts[i].getLastName()) << " | " << std::setw(10) << truncate(this->_contacts[i].getNickname()) << " |"
-			<< std::endl;
+	for (size_t i = 0; i < _size; i++)
+		std::cout << "|   " << i << "   | " << std::setw(10) << truncate(_contacts[i].getFirstName()) << " | "
+			<< std::setw(10) << truncate(_contacts[i].getLastName()) << " | " << std::setw(10) << truncate(_contacts[i].getNickname()) << " |" << std::endl;
 
 	std::cout << std::endl;
 
@@ -95,8 +93,8 @@ void PhoneBook::search() {
 			std::cout << "Invalid index" << std::endl;
 
 		std::cout << "Index [0";
-		if (this->_size > 1)
-			std::cout << "-" << this->_size - 1;
+		if (_size > 1)
+			std::cout << "-" << _size - 1;
 		std::cout << "]: ";
 
 		std::getline(std::cin, input);
@@ -111,9 +109,9 @@ void PhoneBook::search() {
 		input_s >> index;
 		if (input_s.fail())
 			return ;
-	} while (!input_s.eof() || index >= this->_size);
+	} while (!input_s.eof() || index >= _size);
 
-	std::cout << std::endl << this->_contacts[index] << std::endl;
+	std::cout << std::endl << _contacts[index] << std::endl;
 }
 
 PhoneBook::~PhoneBook() {
