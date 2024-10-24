@@ -1,6 +1,7 @@
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
-#define PHONEBOOK_SIZE_MAX	8
+
+#define PHONEBOOK_SIZE_MAX 8
 
 #include <iomanip>
 #include <sstream>
