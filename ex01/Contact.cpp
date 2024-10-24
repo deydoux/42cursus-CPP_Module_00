@@ -11,7 +11,7 @@ Contact::~Contact() {
 }
 
 Contact &Contact::operator=(const Contact &rhs) {
-	std::cerr << _firstName << " " << _lastName << " Contact copy operator called" << std::endl;
+	std::cerr << _firstName << " " << _lastName << " Contact copy assignement operator called" << std::endl;
 	_firstName = rhs._firstName;
 	_lastName = rhs._lastName;
 	_nickname = rhs._nickname;
