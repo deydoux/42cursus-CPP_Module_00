@@ -6,6 +6,10 @@ Contact::Contact(const std::string &firstName, const std::string &lastName, cons
 	std::cerr << _firstName << " " << _lastName << " Contact constructor called" << std::endl;
 }
 
+Contact::~Contact() {
+	std::cerr << _firstName << " " << _lastName << " Contact destructor called" << std::endl;
+}
+
 Contact &Contact::operator=(const Contact &rhs) {
 	std::cerr << _firstName << " " << _lastName << " Contact copy operator called" << std::endl;
 	_firstName = rhs._firstName;
@@ -36,12 +40,7 @@ std::string Contact::getDarkestSecret() const {
 	return (_darkestSecret);
 }
 
-Contact::~Contact() {
-	std::cerr << _firstName << " " << _lastName << " Contact destructor called" << std::endl;
-}
-
 std::ostream &operator<<(std::ostream &os, const Contact &contact) {
-	std::cerr << contact.getFirstName() << " " << contact.getLastName() << " Contact overload operator called" << std::endl;
 	os << "First name: " << contact.getFirstName() << std::endl
 		<< "Last name: " << contact.getLastName() << std::endl
 		<< "Nickname: " << contact.getNickname() << std::endl

@@ -1,7 +1,11 @@
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook() : _oldestIndex(0), _size(0) {
+PhoneBook::PhoneBook(): _oldestIndex(0), _size(0) {
 	std::cerr << "PhoneBook constructor called" << std::endl;
+}
+
+PhoneBook::~PhoneBook() {
+	std::cerr << "PhoneBook destructor called" << std::endl;
 }
 
 static std::string readField(const std::string fieldName) {
@@ -111,8 +115,4 @@ void PhoneBook::search() {
 	} while (!input_s.eof() || index >= _size);
 
 	std::cout << std::endl << _contacts[index] << std::endl;
-}
-
-PhoneBook::~PhoneBook() {
-	std::cerr << "PhoneBook destructor called" << std::endl;
 }

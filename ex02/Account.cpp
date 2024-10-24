@@ -24,7 +24,7 @@ void Account::displayAccountsInfos(void) {
 		<< Account::_totalNbWithdrawals << std::endl;
 }
 
-Account::Account(int initial_deposit) : _accountIndex(Account::_nbAccounts++), _amount(initial_deposit), _nbDeposits(0), _nbWithdrawals(0) {
+Account::Account(int initial_deposit): _accountIndex(Account::_nbAccounts++), _amount(initial_deposit), _nbDeposits(0), _nbWithdrawals(0) {
 	std::cerr << "Index " << _accountIndex << " Account constructor called" << std::endl;
 	_totalAmount += _amount;
 	_displayTimestamp();

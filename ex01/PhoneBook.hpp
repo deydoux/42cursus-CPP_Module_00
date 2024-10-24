@@ -8,14 +8,14 @@
 
 class PhoneBook {
 private:
-	Contact	_contacts[PHONEBOOK_SIZE_MAX];
-	size_t	_oldestIndex;
-	size_t	_size;
+	Contact _contacts[PHONEBOOK_SIZE_MAX];
+	size_t _oldestIndex;
+	size_t _size;
 public:
 	PhoneBook();
-	void	add();
-	void	search();
 	~PhoneBook();
+	void add();
+	void search();
 };
 
 #endif
