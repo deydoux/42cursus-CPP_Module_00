@@ -110,9 +110,7 @@ void PhoneBook::search() {
 		input_s.str(input);
 
 		input_s >> index;
-		if (input_s.fail())
-			return ;
-	} while (!input_s.eof() || index >= _size);
+	} while (!input_s.eof() || input_s.fail() || index >= _size);
 
 	std::cout << std::endl << _contacts[index] << std::endl;
 }
